@@ -8,8 +8,8 @@
 #include <google/protobuf/text_format.h>
 #include <google/protobuf/io/coded_stream.h>
 
-#include "caffe/net.hpp"
-#include "caffe/profiler.hpp"
+#include "mini-caffe/net.hpp"
+#include "mini-caffe/profiler.hpp"
 #include "./layer.hpp"
 #include "./util/math_functions.hpp"
 #include "./util/upgrade_proto.hpp"

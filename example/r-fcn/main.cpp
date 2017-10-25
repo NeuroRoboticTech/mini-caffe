@@ -1,6 +1,6 @@
 #include <vector>
 #include <algorithm>
-#include <caffe/caffe.hpp>
+#include <mini-caffe/mini-caffe.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>

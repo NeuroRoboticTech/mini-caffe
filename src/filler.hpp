@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "caffe/blob.hpp"
+#include "mini-caffe/blob.hpp"
 #include "./util/math_functions.hpp"
 #include "./proto/caffe.pb.h"
 

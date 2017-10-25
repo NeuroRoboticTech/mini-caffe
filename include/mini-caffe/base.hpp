@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 
-#include <caffe/logging.hpp>
+#include <mini-caffe/logging.hpp>
 
 #ifdef _MSC_VER
 #ifdef CAFFE_EXPORTS

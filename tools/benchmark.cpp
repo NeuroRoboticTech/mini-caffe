@@ -1,7 +1,7 @@
 #include <string>
 
-#include <caffe/net.hpp>
-#include <caffe/profiler.hpp>
+#include <mini-caffe/net.hpp>
+#include <mini-caffe/profiler.hpp>
 
 int main(int argc, char *argv[]) {
   CHECK_EQ(argc, 5) << "[Usage]: ./benchmark net.prototxt net.caffemodel iterations gpu_id";

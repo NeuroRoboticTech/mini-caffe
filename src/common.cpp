@@ -1,4 +1,4 @@
-#include "caffe/base.hpp"
+#include "mini-caffe/base.hpp"
 #include "./common.hpp"
 #include "./thread_local.hpp"
 

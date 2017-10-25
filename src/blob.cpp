@@ -2,7 +2,7 @@
 
 #include <google/protobuf/io/coded_stream.h>
 
-#include "caffe/blob.hpp"
+#include "mini-caffe/blob.hpp"
 #include "./syncedmem.hpp"
 #include "./util/io.hpp"
 #include "./util/math_functions.hpp"

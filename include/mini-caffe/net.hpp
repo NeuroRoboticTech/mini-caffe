@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "caffe/blob.hpp"
+#include "mini-caffe/blob.hpp"
 
 namespace caffe {
 

@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "caffe/blob.hpp"
+#include "mini-caffe/blob.hpp"
 #include "./common.hpp"
 #include "./layer_factory.hpp"
 #include "./proto/caffe.pb.h"

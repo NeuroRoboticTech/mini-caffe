@@ -4,7 +4,7 @@
 #include <cassert>
 #include <vector>
 #include <string>
-#include <caffe/caffe.hpp>
+#include <mini-caffe/mini-caffe.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 

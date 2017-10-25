@@ -1,7 +1,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <caffe/c_api.h>
+#include <mini-caffe/c_api.h>
 
 #define CHECK(condition)                          \
   if (!(condition)) {                             \

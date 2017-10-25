@@ -1,9 +1,9 @@
 #include <mutex>
 
-#include "caffe/c_api.h"
-#include "caffe/blob.hpp"
-#include "caffe/net.hpp"
-#include "caffe/profiler.hpp"
+#include "mini-caffe/c_api.h"
+#include "mini-caffe/blob.hpp"
+#include "mini-caffe/net.hpp"
+#include "mini-caffe/profiler.hpp"
 #include "./thread_local.hpp"
 
 #define API_BEGIN() try {

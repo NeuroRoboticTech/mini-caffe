@@ -4,7 +4,7 @@
 #include <random>
 #include <memory>
 #include <algorithm>
-#include <caffe/caffe.hpp>
+#include <mini-caffe/mini-caffe.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 

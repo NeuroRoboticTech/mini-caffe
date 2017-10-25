@@ -1,6 +1,6 @@
 #include <jni.h>
 #include <string.h>
-#include "caffe/c_api.h"
+#include "mini-caffe/c_api.h"
 
 #define CaffeJNIMethodName(klass, method) Java_com_luoyetx_minicaffe_##klass##_jni##method
 #define CaffeJNIMethod(klass, method, return_type) \

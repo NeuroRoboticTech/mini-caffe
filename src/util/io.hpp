@@ -7,7 +7,7 @@
 
 #include "google/protobuf/message.h"
 
-#include "caffe/base.hpp"
+#include "mini-caffe/base.hpp"
 #include "../proto/caffe.pb.h"
 
 #ifndef CAFFE_TMP_DIR_RETRIES

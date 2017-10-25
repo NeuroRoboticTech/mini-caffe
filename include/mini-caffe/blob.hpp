@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "caffe/base.hpp"
+#include "mini-caffe/base.hpp"
 
 const int kMaxBlobAxes = 32;
 

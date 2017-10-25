@@ -4,10 +4,10 @@
 #ifndef CAFFE_CAFFE_HPP_
 #define CAFFE_CAFFE_HPP_
 
-#include "caffe/base.hpp"
-#include "caffe/logging.hpp"
-#include "caffe/blob.hpp"
-#include "caffe/net.hpp"
-#include "caffe/profiler.hpp"
+#include "mini-caffe/base.hpp"
+#include "mini-caffe/logging.hpp"
+#include "mini-caffe/blob.hpp"
+#include "mini-caffe/net.hpp"
+#include "mini-caffe/profiler.hpp"
 
 #endif  // CAFFE_CAFFE_HPP_

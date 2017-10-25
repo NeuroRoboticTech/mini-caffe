@@ -20,24 +20,14 @@ endif()
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/CMakeInstallDirs_full.cmake)
 
-#if(NOT DEFINED CMAKE_INSTALL_INCLUDEDIR)
-#	set(CMAKE_INSTALL_INCLUDEDIR "include" CACHE PATH "C header files (include)")
-#endif(NOT DEFINED CMAKE_INSTALL_INCLUDEDIR)
-
-#mark_as_advanced(
-#	CMAKE_INSTALL_INCLUDEDIR
-#)
-
-#if(NOT IS_ABSOLUTE ${CMAKE_INSTALL_INCLUDEDIR})
-#	set(CMAKE_INSTALL_FULL_INCLUDEDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}" CACHE PATH "C header files full path (PREFIX/INCLUDEDIR)")
-#else(NOT IS_ABSOLUTE ${CMAKE_INSTALL_INCLUDEDIR})
-#	set(CMAKE_INSTALL_FULL_INCLUDEDIR "${CMAKE_INSTALL_INCLUDEDIR}" CACHE PATH "C header files full path (PREFIX/INCLUDEDIR)")
-#endif(NOT IS_ABSOLUTE ${CMAKE_INSTALL_INCLUDEDIR})
-
-
 message(STATUS "CMAKE_INSTALL_FULL_INCLUDEDIR=${CMAKE_INSTALL_FULL_INCLUDEDIR}")
 message(STATUS "CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_FULL_LIBDIR}")
 message(STATUS "CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_FULL_BINDIR}")
+
+# Set proto header src folders
+
+file(GLOB proto_src ${CMAKE_CURRENT_LIST_DIR}/src/proto/*.pb.cc)
+file(GLOB proto_hdrs ${CMAKE_CURRENT_LIST_DIR}/src/proto/*.pb.h)
 
 # include and library
 if(MSVC)
@@ -70,8 +60,8 @@ else(MSVC)
 endif(MSVC)
 
 # source file structure
-file(GLOB CAFFE_INCLUDE ${CMAKE_CURRENT_LIST_DIR}/include/caffe/*.h
-                        ${CMAKE_CURRENT_LIST_DIR}/include/caffe/*.hpp)
+file(GLOB CAFFE_INCLUDE ${CMAKE_CURRENT_LIST_DIR}/include/mini-caffe/*.h
+                        ${CMAKE_CURRENT_LIST_DIR}/include/mini-caffe/*.hpp)
 file(GLOB CAFFE_SRC ${CMAKE_CURRENT_LIST_DIR}/src/*.hpp
                     ${CMAKE_CURRENT_LIST_DIR}/src/*.cpp)
 file(GLOB CAFFE_SRC_LAYERS ${CMAKE_CURRENT_LIST_DIR}/src/layers/*.hpp
@@ -147,11 +137,13 @@ source_group(src\\jni FILES ${CAFFE_SRC_JNI})
 source_group(src\\layers\\cudnn FILES ${CAFFE_SRC_LAYERS_CUDNN})
 
 add_definitions(-DCAFFE_EXPORTS)
-add_library(caffe SHARED ${CAFFE_COMPILE_CODE})
-target_link_libraries(caffe ${Caffe_LINKER_LIBS})
+add_library(minicaffe SHARED ${CAFFE_COMPILE_CODE})
+target_link_libraries(minicaffe ${Caffe_LINKER_LIBS})
 
 # ---[ Install
-install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/caffe DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/mini-caffe DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+install(FILES ${proto_hdrs} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/mini-caffe/proto)
+install(TARGETS minicaffe EXPORT MiniCaffeTargets DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 
 
 

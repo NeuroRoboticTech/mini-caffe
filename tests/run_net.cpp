@@ -6,8 +6,8 @@
 #include <sstream>
 #include <thread>
 
-#include <caffe/net.hpp>
-#include <caffe/profiler.hpp>
+#include <mini-caffe/net.hpp>
+#include <mini-caffe/profiler.hpp>
 
 using namespace std;
 using namespace caffe;

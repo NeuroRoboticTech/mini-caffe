@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 
-#include "caffe/base.hpp"
+#include "mini-caffe/base.hpp"
 #include "./thread_local.hpp"
 
 #ifdef USE_CUDA
