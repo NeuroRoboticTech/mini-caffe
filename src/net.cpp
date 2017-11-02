@@ -23,6 +23,12 @@ Net::Net(const string& param_file) {
   Init(param);
 }
 
+void Net::Init(const string& param_file) {
+  NetParameter param;
+  ReadNetParamsFromTextFileOrDie(param_file, &param);
+  Init(param);
+}
+
 void Net::Init(const NetParameter& param) {
   // Basically, build all the layers and set up their connections.
   name_ = param.name();

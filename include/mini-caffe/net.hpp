@@ -22,6 +22,7 @@ class NetParameter;
  */
 class CAFFE_API Net {
  public:
+  explicit Net() {};
   explicit Net(const string& param_file);
   explicit Net(const NetParameter& param) {
     Init(param);
@@ -29,6 +30,9 @@ class CAFFE_API Net {
 
   /// @brief Initialize a network with a NetParameter.
   void Init(const NetParameter& param);
+
+  /// @brief Initialize from a param file.
+  void Init(const string& param_file);
 
   /**
    * @brief Run Forward and return the result.
