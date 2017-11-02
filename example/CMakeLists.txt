@@ -13,5 +13,5 @@ target_link_libraries(wgan minicaffe ${OpenCV_LIBS})
 add_executable(r-fcn r-fcn/main.cpp)
 target_link_libraries(r-fcn minicaffe ${OpenCV_LIBS})
 
-add_executable(cloud_detector cloud_detector/main.cpp)
-target_link_libraries(cloud_detector minicaffe ${OpenCV_LIBS})
+#add_executable(cloud_detector cloud_detector/main.cpp)
+#target_link_libraries(cloud_detector minicaffe ${OpenCV_LIBS})

@@ -9,6 +9,12 @@ set(BLAS "openblas" CACHE STRING "Selected BLAS library")
 
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/Cuda.cmake)
 
+find_package(Protobuf 3.1.0 EXACT REQUIRED)
+
+#message(STATUS "PROTOBUF_FOUND=${PROTOBUF_FOUND}")
+#message(STATUS "PROTOBUF_INCLUDE_DIRS=${PROTOBUF_INCLUDE_DIRS}")
+#message(STATUS "PROTOBUF_LIBRARIES=${PROTOBUF_LIBRARIES}")
+
 if(USE_JAVA)
   find_package(JNI)
 endif()
@@ -48,8 +54,9 @@ elseif(ANDROID)
     message(FATAL_ERROR "ANDROID_EXTRA_LIBRARY_PATH must be set.")
   endif(ANDROID_EXTRA_LIBRARY_PATH)
 else(MSVC)
+  include_directories(${PROTOBUF_INCLUDE_DIRS})
   include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
-  list(APPEND Caffe_LINKER_LIBS protobuf)
+  list(APPEND Caffe_LINKER_LIBS ${PROTOBUF_LIBRARIES})
   if(BLAS STREQUAL "openblas")
     list(APPEND Caffe_LINKER_LIBS openblas)
     message(STATUS "Use OpenBLAS for blas library")
@@ -58,6 +65,8 @@ else(MSVC)
     message(STATUS "Use BLAS for blas library")
   endif()
 endif(MSVC)
+
+#message(STATUS "Caffe_LINKER_LIBS=${Caffe_LINKER_LIBS}")
 
 # source file structure
 file(GLOB CAFFE_INCLUDE ${CMAKE_CURRENT_LIST_DIR}/include/mini-caffe/*.h
